@@ -1,6 +1,9 @@
 // React
 import React from 'react';
-import TiposBasicos from './typescript/TiposBasicos';
+
+// Components
+// import TiposBasicos from './typescript/TiposBasicos';
+import ObjetosLiterales from './typescript/ObjetosLiterales';
 
 interface Props {}
 
@@ -9,7 +12,8 @@ const App: React.FC<Props> = () => {
     <div className="mt-2">
       <h1>Introduccion a TS-React</h1>
       <hr />
-      <TiposBasicos />
+      {/* <TiposBasicos /> */}
+      <ObjetosLiterales />
     </div>
   );
 };
