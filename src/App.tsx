@@ -4,7 +4,8 @@ import React from 'react';
 // Components
 // import TiposBasicos from './typescript/TiposBasicos';
 // import ObjetosLiterales from './typescript/ObjetosLiterales';
-import Funciones from './typescript/Funciones';
+// import Funciones from './typescript/Funciones';
+import Contador from './components/Contador';
 
 interface Props {}
 
@@ -15,7 +16,8 @@ const App: React.FC<Props> = () => {
       <hr />
       {/* <TiposBasicos /> */}
       {/* <ObjetosLiterales /> */}
-      <Funciones />
+      {/* <Funciones /> */}
+      <Contador />
     </div>
   );
 };
