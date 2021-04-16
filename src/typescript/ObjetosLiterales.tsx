@@ -7,10 +7,12 @@ interface Persona {
   nombreCompleto: string;
   nombre: string;
   edad: number;
-  direccion: {
-    pais: string;
-    casaNo: number;
-  };
+  direccion: Direccion;
+}
+
+interface Direccion {
+  pais: string;
+  casaNo: number;
 }
 
 const ObjetosLiterales: React.FC<Props> = () => {
