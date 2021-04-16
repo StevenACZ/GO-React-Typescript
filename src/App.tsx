@@ -3,7 +3,8 @@ import React from 'react';
 
 // Components
 // import TiposBasicos from './typescript/TiposBasicos';
-import ObjetosLiterales from './typescript/ObjetosLiterales';
+// import ObjetosLiterales from './typescript/ObjetosLiterales';
+import Funciones from './typescript/Funciones';
 
 interface Props {}
 
@@ -13,7 +14,8 @@ const App: React.FC<Props> = () => {
       <h1>Introduccion a TS-React</h1>
       <hr />
       {/* <TiposBasicos /> */}
-      <ObjetosLiterales />
+      {/* <ObjetosLiterales /> */}
+      <Funciones />
     </div>
   );
 };
