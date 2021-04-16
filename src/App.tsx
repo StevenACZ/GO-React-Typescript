@@ -6,7 +6,8 @@ import React from 'react';
 // import ObjetosLiterales from './typescript/ObjetosLiterales';
 // import Funciones from './typescript/Funciones';
 // import Contador from './components/Contador';
-import ContadorConHook from './components/ContadorConHook';
+// import ContadorConHook from './components/ContadorConHook';
+import Login from './components/Login';
 
 interface Props {}
 
@@ -19,7 +20,8 @@ const App: React.FC<Props> = () => {
       {/* <ObjetosLiterales /> */}
       {/* <Funciones /> */}
       {/* <Contador /> */}
-      <ContadorConHook />
+      {/* <ContadorConHook /> */}
+      <Login />
     </div>
   );
 };
