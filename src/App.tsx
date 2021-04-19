@@ -8,7 +8,8 @@ import React from 'react';
 // import Contador from './components/Contador';
 // import ContadorConHook from './components/ContadorConHook';
 // import Login from './components/Login';
-import LoginPrueba from './components/LoginPrueba';
+// import LoginPrueba from './components/LoginPrueba';
+import Usuarios from './components/Usuarios';
 
 interface Props {}
 
@@ -23,7 +24,8 @@ const App: React.FC<Props> = () => {
       {/* <Contador /> */}
       {/* <ContadorConHook /> */}
       {/* <Login /> */}
-      <LoginPrueba />
+      {/* <LoginPrueba /> */}
+      <Usuarios />
     </div>
   );
 };
