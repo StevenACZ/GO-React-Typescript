@@ -1,5 +1,5 @@
 // React
-import React, { useEffect, useReducer } from 'react';
+import React, { useReducer } from 'react';
 
 interface Props {}
 
