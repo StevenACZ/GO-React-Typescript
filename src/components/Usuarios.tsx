@@ -1,17 +1,23 @@
 // React
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 // Axios
 import reqResApi from '../api/reqRes';
 
+// Interfaces
+import { ReqResListado, User } from '../interfaces/reqRes.interface';
+
 interface Props {}
 
 const Usuarios: React.FC<Props> = () => {
+  const [users, setUsers] = useState<User[]>([]);
+
   const getUsers = async () => {
     const {
-      data: { data },
-    } = await reqResApi.get('/users');
-    console.log(data);
+      data: { data: users },
+    } = await reqResApi.get<ReqResListado>('/users');
+
+    setUsers(users);
   };
 
   useEffect(() => {
