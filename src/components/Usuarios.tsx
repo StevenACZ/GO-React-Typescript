@@ -1,5 +1,5 @@
 // React
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 // Axios
 import reqResApi from '../api/reqRes';
@@ -11,18 +11,24 @@ interface Props {}
 
 const Usuarios: React.FC<Props> = () => {
   const [users, setUsers] = useState<User[]>([]);
+  const pageRef = useRef(1);
 
   const getUsers = async () => {
     const {
       data: { data: users },
-    } = await reqResApi.get<ReqResListado>('/users');
+    } = await reqResApi.get<ReqResListado>('/users', {
+      params: {
+        page: pageRef.current,
+      },
+    });
 
-    setUsers(users);
+    if (users.length > 0) {
+      setUsers(users);
+      pageRef.current++;
+    } else {
+      alert('There is no more users');
+    }
   };
-
-  useEffect(() => {
-    getUsers();
-  }, []);
 
   const renderItem = ({ id, first_name, last_name, email, avatar }: User) => {
     return (
@@ -45,6 +51,10 @@ const Usuarios: React.FC<Props> = () => {
     );
   };
 
+  useEffect(() => {
+    getUsers();
+  }, []);
+
   return (
     <>
       <h3>Usuarios</h3>
@@ -58,8 +68,9 @@ const Usuarios: React.FC<Props> = () => {
         </thead>
         <tbody>{users.map((user) => renderItem(user))}</tbody>
       </table>
-      <button className="btn btn-danger">Back</button>{' '}
-      <button className="btn btn-primary">Next</button>
+      <button className="btn btn-primary" onClick={getUsers}>
+        Next
+      </button>
     </>
   );
 };
