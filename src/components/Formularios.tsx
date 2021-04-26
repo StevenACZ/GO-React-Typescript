@@ -1,20 +1,16 @@
 // React
-import React, { useState } from 'react';
+import React from 'react';
+
+// Custom Hooks
+import useForm from '../hooks/useForm';
 
 interface Props {}
 
 const Formularios: React.FC<Props> = () => {
-  const [formulario, setFormulario] = useState({
+  const { email, password, state, onChange } = useForm({
     email: 'test@test.com',
     password: '123456',
   });
-
-  const onChange = (value: string, campo: string) => {
-    setFormulario({
-      ...formulario,
-      [campo]: value,
-    });
-  };
 
   return (
     <div>
@@ -23,17 +19,17 @@ const Formularios: React.FC<Props> = () => {
         type="text"
         className="form-control"
         placeholder="Email"
-        value={formulario.email}
+        value={email}
         onChange={({ target }) => onChange(target.value, 'email')}
       />
       <input
         type="text"
         className="form-control mt-2 mb-2"
         placeholder="Password"
-        value={formulario.password}
+        value={password}
         onChange={({ target }) => onChange(target.value, 'password')}
       />
-      <pre>{JSON.stringify(formulario, null, 2)}</pre>
+      <pre>{JSON.stringify(state, null, 2)}</pre>
     </div>
   );
 };
