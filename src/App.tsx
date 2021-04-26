@@ -9,7 +9,8 @@ import React from 'react';
 // import ContadorConHook from './components/ContadorConHook';
 // import Login from './components/Login';
 // import LoginPrueba from './components/LoginPrueba';
-import Usuarios from './components/Usuarios';
+// import Usuarios from './components/Usuarios';
+import Formularios from './components/Formularios';
 
 interface Props {}
 
@@ -25,7 +26,8 @@ const App: React.FC<Props> = () => {
       {/* <ContadorConHook /> */}
       {/* <Login /> */}
       {/* <LoginPrueba /> */}
-      <Usuarios />
+      {/* <Usuarios /> */}
+      <Formularios />
     </div>
   );
 };
